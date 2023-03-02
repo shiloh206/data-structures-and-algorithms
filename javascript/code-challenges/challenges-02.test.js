@@ -83,7 +83,7 @@ const mapTwoToThe = (arr) => {
   // Solution code here...
 numbers.map(function(num){
   return Math.pow(num, 2);
-}
+});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
@@ -95,9 +95,9 @@ Read the MDN documentation on String.charCodeAt() if necessary.
 For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
-const charCode = (arr) => {
-  // Solution code here...
-};
+  function charCode(arr) {
+    // Solution code here...
+  }
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
