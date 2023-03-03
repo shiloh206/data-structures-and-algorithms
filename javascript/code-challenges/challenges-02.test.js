@@ -81,9 +81,8 @@ Write a function named mapTwoToThe that produces the same output as your forLoop
 
 const mapTwoToThe = (arr) => {
   // Solution code here...
-numbers.map(function(num){
-  return Math.pow(num, 2);
-});
+  return arr.map(num => Math.pow(2, num));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
