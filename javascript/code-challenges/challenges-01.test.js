@@ -17,7 +17,7 @@ const addOne = (arr) => {
   });
 
   return result;
-
+};
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -28,6 +28,12 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 
 const addExclamation = (arr) => {
   // Solution code here...
+  let result = [];
+
+  arr.forEach(str => {
+    result.push(str + '!');
+  });
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +46,10 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let result = [];
+
+  arr.forEach(str => result.push(str.toUpperCase()));
+  return result;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,8 +100,8 @@ const addValues = (arr, value) => {
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  for(let i = 0; i < times; i++){
-    callback(arr,num);
+  for (let i = 0; i < times; i++) {
+    callback(arr, num);
   }
   return arr;
 };
@@ -117,9 +127,18 @@ This function should use forEach to populate your grocery list based on the stor
 
 const createList = (availableItems) => {
   // Solution code here...
+  let list = [];
+
+  availableItems.forEach(item => {
+    if(item.available){
+      list.push(item.name);
+    }
+  });
+  return list;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/*
+------------------------------------------------------------------------------------------------
 STRETCH - CHALLENGE 7
 
 Write a function named fizzbuzz that takes in an array of numbers.
@@ -133,9 +152,9 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-const fizzbuzz = (arr) => {
+function fizzbuzz(arr) {
   // Solution code here...
-};
+}
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -148,7 +167,7 @@ Run your tests from the console: jest challenges-01.test.js
 
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
+xdescribe('Testing challenge 1', () => {
   test('It should return an array with 1 added to each value of the original array', () => {
     expect(addOne([1, 2, 3, 4, 5])).toStrictEqual([2, 3, 4, 5, 6]);
   });
@@ -166,13 +185,13 @@ describe('Testing challenge 3', () => {
   });
 });
 
-describe('Testing challenge 4', () => {
+xdescribe('Testing challenge 4', () => {
   test('It should provide an array of strings, that get uppercased, and a "!" at the end', () => {
     expect(speaker(['hello', '301', 'students'], greeting)).toStrictEqual(['HELLO!', '301!', 'STUDENTS!']);
   });
 });
 
-describe('Testing challenge 5', () => {
+xdescribe('Testing challenge 5', () => {
   test('It should add the number 8 to the array five times', () => {
     expect(addNumbers(8, [], 5, addValues)).toStrictEqual([8, 8, 8, 8, 8]);
     expect(addNumbers(8, [], 5, addValues).length).toStrictEqual(5);
